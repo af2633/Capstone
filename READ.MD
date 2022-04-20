@@ -82,7 +82,7 @@ In the manager menu it gives four options.
 [1] for users
 [2] for competencies
 [3] for Assessments and Assessment Results
-
+[4] for quit
 Once the managers selects an option they can follow the prompt to input information or 
 view the output of information.
 
