@@ -5,35 +5,35 @@ connection = sqlite3.connect('capstone.db')
 cursor = connection.cursor()
 
 
-def manager_edit_user(user_id):
-    user = ''
-    my_values = ''
-    menu = input("\n Please enter the number for the field you want to update\n [1] first name \n [2] last name \n [3] phone number \n [4] email \n [5] password \n ")
-    if menu == '':
-        pass
-    if menu == '1':
-        my_values = input('Please enter first name \n ')
-        user = 'UPDATE Users SET first_name = ? WHERE user_id = ?'
-        cursor.execute(user, [my_values, user_id])
-    if menu == '2':
-        my_values = input('Please enter last name \n')
-        user = 'UPDATE Users SET last_name = ? WHERE user_id = ?'
-        cursor.execute(user, [my_values,user_id])
-    if menu == '3':
-        my_values = input('Please enter phone number \n')
-        user = 'UPDATE Users SET phone_number = ? WHERE user_id = ?'
-        cursor.execute(user, [my_values, user_id])
-    if menu == '4':
-        my_values = input('Please enter email address \n')
-        user = 'UPDATE Users SET email = ? WHERE user_id = ?'
-        cursor.execute(user, [my_values, user_id])
-    if menu == '5':
-        my_values = sha256_crypt.encrypt(input('Please enter new password \n '))
-        user = 'UPDATE Users SET password = ? WHERE user_id = ?'
-        cursor.execute(user, [my_values, user_id])
+# def manager_edit_user(user_id):
+#     user = ''
+#     my_values = ''
+#     menu = input("\n Please enter the number for the field you want to update\n [1] first name \n [2] last name \n [3] phone number \n [4] email \n [5] password \n ")
+#     if menu == '':
+#         pass
+#     if menu == '1':
+#         my_values = input('Please enter first name \n ')
+#         user = 'UPDATE Users SET first_name = ? WHERE user_id = ?'
+#         cursor.execute(user, [my_values, user_id])
+#     if menu == '2':
+#         my_values = input('Please enter last name \n')
+#         user = 'UPDATE Users SET last_name = ? WHERE user_id = ?'
+#         cursor.execute(user, [my_values,user_id])
+#     if menu == '3':
+#         my_values = input('Please enter phone number \n')
+#         user = 'UPDATE Users SET phone_number = ? WHERE user_id = ?'
+#         cursor.execute(user, [my_values, user_id])
+#     if menu == '4':
+#         my_values = input('Please enter email address \n')
+#         user = 'UPDATE Users SET email = ? WHERE user_id = ?'
+#         cursor.execute(user, [my_values, user_id])
+#     if menu == '5':
+#         my_values = sha256_crypt.encrypt(input('Please enter new password \n '))
+#         user = 'UPDATE Users SET password = ? WHERE user_id = ?'
+#         cursor.execute(user, [my_values, user_id])
     
-    connection.commit()
-manager_edit_user(17)
+#     connection.commit()
+# manager_edit_user(17)
     
 
 

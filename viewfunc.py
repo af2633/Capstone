@@ -97,7 +97,7 @@ def view_user_assessments_list():
         
         connection.commit()
 
-#THIS IS FOR THE USER TO VIEW THERE OWN COMPETENCY &ASSESSMENTS
+#THIS IS FOR THE USER TO VIEW THERE OWN COMPETENCY & ASSESSMENTS
 def view_user_comp_assess(user_id):
     print('\n--- User Competencies and Assessments ---\n')
     user_id = input("Please enter your USER ID number: ")
@@ -110,19 +110,3 @@ def view_user_comp_assess(user_id):
         print(f'{my_list[0]:<15}{my_list[1]:<25}{my_list[2]:<20}{my_list[3]:<18}{my_list[4]:<45}{my_list[5]:<30}\n')
     
     connection.commit()
-
-# extra function I can't remember what it does
-# def view_level_report_user():
-#     print('\n--- View A Users Level Report ---\n')
-#     user_id = input("Please enter user_id: ")
-#     query = "SELECT C.comp_name, u.user_id, first_name, last_name, AR.score, score_name, date_taken FROM Users U JOIN Assessment_Results AR ON U.user_id = AR.user_id JOIN Assessments A ON AR.assess_name=A.assess_name JOIN Competencies C ON A.comp_name=C.comp_name JOIN Competency_scale CS ON AR.score=cs.score WHERE U.user_id = ?"
-#     rows = cursor.execute(query, (f'{user_id}',)).fetchall()
-#     my_list = ['comp_name', 'user_id', 'first_name', 'last_name', 'score', 'score_name']
-
-#     print (f"{'comp_name':<20}{'user_id':<20}{'first_name':<20}{'last_name':<20}{'score':<10}{'score_name':>10}") 
-
-#     for my_list in rows:
-#         my_list = [str(x) for x in my_list]
-#         print(f'{my_list[0]:<20}{my_list[1]:<20}{my_list[2]:<20}{my_list[3]:<20}{my_list[4]:<10}{my_list[5]:<10}')
-        
-#         connection.commit()
